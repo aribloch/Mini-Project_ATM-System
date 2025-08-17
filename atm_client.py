@@ -1,7 +1,7 @@
 # atm_client.py
 import requests
 
-BASE_URL = "http://0.0.0.0:5000/accounts"
+BASE_URL = "http://127.0.0.1:5000/accounts"
 
 def get_balance(account_number):
     url = f"{BASE_URL}/{account_number}/balance"
@@ -15,7 +15,7 @@ def deposit(account_number, amount):
     url = f"{BASE_URL}/{account_number}/deposit"
     response = requests.post(url, json={"amount": amount})
     if response.status_code == 200:
-        print("Deposit successful. New balance:", response.json()["new_balance"])
+        print("Deposit successful. New balance:", response.json()["balance"])
     else:
         print("Error:", response.text)
 
@@ -23,7 +23,7 @@ def withdraw(account_number, amount):
     url = f"{BASE_URL}/{account_number}/withdraw"
     response = requests.post(url, json={"amount": amount})
     if response.status_code == 200:
-        print("Withdrawal successful. New balance:", response.json()["new_balance"])
+        print("Withdrawal successful. New balance:", response.json()["balance"])
     else:
         print("Error:", response.text)
 
