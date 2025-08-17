@@ -55,4 +55,4 @@ def withdraw(account_number):
 
 if __name__ == "__main__":
     # default parameters are host="127.0.0.1", port=5000 - runs on local host
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
