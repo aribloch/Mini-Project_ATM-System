@@ -1,7 +1,7 @@
 # atm_client.py
 import requests
 
-BASE_URL = "http://127.0.0.1:5000/accounts"
+BASE_URL = "http://13.61.142.204:5000/accounts"
 
 def get_balance(account_number):
     url = f"{BASE_URL}/{account_number}/balance"
