@@ -9,7 +9,8 @@ app = Flask(__name__)
 account_repo = InMemoryAccountRepository()
 account_service = AccountService(account_repo)
 
-# Create some sample accounts
+# I assume that a LOGIN/ADD_ACCOUNT function is implemented
+# Create some sample accounts for testing
 account_repo.update_account(Account(1001, balance=500.0, min_balance=50.0, credit_limit=1000.0))
 account_repo.update_account(Account(1002, balance=2000.0, min_balance=100.0, credit_limit=1500.0))
 
