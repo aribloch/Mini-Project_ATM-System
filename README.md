@@ -5,7 +5,7 @@ This project is a simple **ATM banking system** built with **Flask** and deploye
 It provides APIs for:
 - Checking account balance  
 - Depositing funds  
-- Withdrawing funds (with monthly credit limit & minimum balance enforcement)  
+- Withdrawing funds (with monthly credit limit & minimum balance enforcement)
 
 The system follows a **layered architecture**:
 - **Models layer** → defines the `Account` class (business entity).  
@@ -33,7 +33,7 @@ The system follows a **layered architecture**:
 
 ---
 
-## ▶️ Execution (Linux)
+## ▶️ Execution of API calls (Linux)
 
 Once your server is running (locally or on AWS), you can test the API with these **curl commands**.  
 Replace `{server-ip}` with your EC2 public IP (or `localhost` if running locally), `{account_number}` with the account number, and `{amount}` with the amount to deposit/withdraw.  
@@ -44,13 +44,39 @@ Replace `{server-ip}` with your EC2 public IP (or `localhost` if running locally
 ```bash
 curl -X GET http://{server-ip}:5000/accounts/{account_number}/balance
 ```
-### 1. Deposit
+### 2. Deposit
 ```bash
 curl -X POST http://{server-ip}:5000/accounts/{account_number}/deposit -H "Content-Type: application/json" -d '{"amount": {amount}}'
 ```
 
-### 1. Withdraw
+### 3. Withdraw
 ```bash
 curl -X POST http://{server-ip}:5000/accounts/{account_number}/withdraw -H "Content-Type: application/json" -d '{"amount": {amount}}'
 ```
 
+## Running the ATM Server Locally
+
+Follow these steps to clone the repository, install dependencies, and run the server on your local machine.
+
+### Clone the Repository
+```bash
+git clone https://github.com/aribloch/Mini-Project_ATM-System
+cd Mini-Project_ATM-System
+```
+Make you you have Python installed on your computer, afterwards you can install dependencies.
+```bash
+pip install flask requests
+```
+Now run the Server
+```bash
+python3 app.py
+```
+### Using the Basic Client
+
+This project includes a file called `atm_client.py`, which is a **basic client** used to test the API calls and interact with the server during development.  
+
+You can run it to interact with your accounts without manually typing `curl` commands, although make sure that it's trying to connect to the server on the correct URL:
+
+```bash
+python3 atm_client.py
+```
