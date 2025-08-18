@@ -14,6 +14,7 @@ The system follows a **layered architecture**:
 - **App layer** → Flask routes expose REST API endpoints.
 
   > Note: There are a couple of "Sample Accounts" built into the DB of the server for convenience (Account Numbers: 1001, 1002 -> provided in the app.py file - lines 14- 15).
+  > As was mentioned in the instructions to the assignment, I made an assumption that an **"Add Account"** functionality is implemented, and also an **Authenticator** is being used to authenticate users and give them acces only to relevant accounts.
 
 ---
 
