@@ -14,8 +14,7 @@ The system follows a **layered architecture**:
 - **App layer** → Flask routes expose REST API endpoints.
 
   > Note: There are a couple of "Sample Accounts" built into the DB of the server for convenience (Account Numbers: 1001, 1002 -> provided in the app.py file - lines 14- 15).
-  > As was mentioned in the instructions to the assignment, I made an assumption that an **"Add Account"** functionality is implemented, and also an **Authenticator** is being used to authenticate users and give them acces only to relevant accounts (Although clearly this security check is only relevant if the client-server transactions occur over HTTPS and not HTTP).
-
+  > As was mentioned in the instructions to the assignment, I made an assumption that an **"Add Account"** functionality is implemented.
 ---
 
 ##  Design Decisions
@@ -29,9 +28,19 @@ The system follows a **layered architecture**:
 3. **Business Rules**  
    - Minimum balance enforcement.  
    - Monthly credit withdrawal limit.  
-   - Automatic reset of monthly withdrawals.  
+   - Automatic reset of monthly withdrawals.
 
-4. **Cloud-Ready**  
+4. **Security** (via Middleware) 
+   - login_required decorator ensures that sensitive endpoints can be protected by token-based authentication.
+   - Keeps authentication separate from business logic, following the Separation of Concerns principle.
+   - Makes endpoints secure by design without cluttering the core logic.
+   - Allows you to easily add, remove, or modify authentication rules in one place.
+   - 
+> Note on Authentication Middleware:
+The login_required decorator is included to demonstrate consideration of authentication as part of the design. In this implementation, it does not enforce actual login or token validation and serves as a placeholder.
+Including it is still a design decision, because it shows how authentication could be integrated, ensures that routes can be protected in a consistent way, and keeps the system modular and ready for future security enhancements.
+
+5. **Cloud-Ready**  
    - Deployable on **AWS EC2**.  
 
 ---
