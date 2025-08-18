@@ -37,12 +37,19 @@ The system follows a **layered architecture**:
    - Allows you to easily add, remove, or modify authentication rules in one place.
    - 
 > Note on Authentication Middleware:
-The login_required decorator is included to demonstrate consideration of authentication as part of the design. In this implementation, it does not enforce actual login or token validation and serves as a placeholder.
+> The login_required decorator is included to demonstrate consideration of authentication as part of the design. In this implementation, it does not enforce actual login or token validation and serves as a placeholder.
 Including it is still a design decision, because it shows how authentication could be integrated, ensures that routes can be protected in a consistent way, and keeps the system modular and ready for future security enhancements.
 
 5. **Cloud-Ready**  
    - Deployable on **AWS EC2**.  
 
+---
+
+## Challenges Faced
+
+- **Learning Flask:** Understanding how to structure routes, handle requests, and use decorators for middleware.  
+- **Cloud Deployment:** Deploying the application on AWS EC2 and ensuring it is accessible externally.  
+- **Separation of Concerns:** Isolating business logic and designing a repository interface for flexibility.  
 ---
 
 ## ▶️ Execution of API calls 
