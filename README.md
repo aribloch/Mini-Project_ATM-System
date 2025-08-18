@@ -56,7 +56,7 @@ curl -X POST http://{server-ip}:5000/accounts/{account_number}/deposit -H "Conte
 ```bash
 curl -X POST http://{server-ip}:5000/accounts/{account_number}/withdraw -H "Content-Type: application/json" -d '{"amount": {amount}}'
 ```
-### Windows
+### Windows (cmd.exe)
 ---
 
 #### 1. Get Balance
@@ -65,12 +65,12 @@ curl -X GET http://{server-ip}:5000/accounts/{account_number}/balance
 ```
 #### 2. Deposit
 ```bash
-curl -X POST http://{server-ip}:5000/accounts/{account_number}/deposit -H "Content-Type: application/json" -d '{"amount": {amount}}'
+curl -X POST http://{server-ip}:5000/accounts/{account_number}/deposit -H "Content-Type: application/json" -d "{\"amount\": {amount}}"
 ```
 
 #### 3. Withdraw
 ```bash
-curl -X POST http://{server-ip}:5000/accounts/{account_number}/withdraw -H "Content-Type: application/json" -d '{"amount": {amount}}'
+curl -X POST http://{server-ip}:5000/accounts/{account_number}/withdraw -H "Content-Type: application/json" -d "{\"amount\": {amount}}"
 ```
 > Note: There might be slight syntax differences based on your specific Windows CLI (cmd.exe, Powershell etc.)
 
