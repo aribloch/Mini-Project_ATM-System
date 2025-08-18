@@ -38,14 +38,14 @@ The system follows a **layered architecture**:
 ## ▶️ Execution of API calls 
 
 Once your server is running (locally or on AWS), you can test the API with these **curl commands**.  
-Replace `{server-ip}` with your EC2 public IP (or `localhost` if running locally), `{account_number}` with the account number, and `{amount}` with the amount to deposit/withdraw.  
+Replace `{server-ip}` with your EC2 public IP - **13.61.142.204** (or `localhost` if running locally), `{account_number}` with the account number (1001, 1002 are Accounts already built in to the in-memory DB), and `{amount}` with the amount to deposit/withdraw.  
 
-### Linux
+### Linux (Ubuntu)
 ---
 
 #### 1. Get Balance
 ```bash
-curl -X GET http://{server-ip}:5000/accounts/{account_number}/balance
+curl http://{server-ip}:5000/accounts/{account_number}/balance
 ```
 #### 2. Deposit
 ```bash
