@@ -101,3 +101,4 @@ You can run it to interact with your accounts without manually typing `curl` com
 ```bash
 python3 atm_client.py
 ```
+After client is up and running just follow the instructions on the screen.
