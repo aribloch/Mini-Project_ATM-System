@@ -11,7 +11,9 @@ The system follows a **layered architecture**:
 - **Models layer** → defines the `Account` class (business entity).  
 - **Repositories layer** → abstracts data access (e.g., in-memory today, could be a database tomorrow).  
 - **Services layer** → contains business logic (deposit, withdraw, enforce rules).  
-- **App layer** → Flask routes expose REST API endpoints.  
+- **App layer** → Flask routes expose REST API endpoints.
+
+  > Note: There are a couple of "Sample Accounts" built into the DB of the server for convenience (Account Numbers: 1001, 1002 -> provided in the app.py file - lines 14- 15).
 
 ---
 
@@ -70,7 +72,7 @@ curl -X POST http://{server-ip}:5000/accounts/{account_number}/deposit -H "Conte
 ```bash
 curl -X POST http://{server-ip}:5000/accounts/{account_number}/withdraw -H "Content-Type: application/json" -d '{"amount": {amount}}'
 ```
-<small> Note: There might be slight syntax differences based on your specific Windows CLI (cmd.exe, Powershell etc.) </small>
+> Note: There might be slight syntax differences based on your specific Windows CLI (cmd.exe, Powershell etc.)
 
 
 ## Running the ATM Server Locally
