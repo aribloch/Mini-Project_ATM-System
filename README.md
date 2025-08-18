@@ -70,7 +70,7 @@ curl -X POST http://{server-ip}:5000/accounts/{account_number}/deposit -H "Conte
 ```bash
 curl -X POST http://{server-ip}:5000/accounts/{account_number}/withdraw -H "Content-Type: application/json" -d '{"amount": {amount}}'
 ```
-Note: There might be slight syntax differences based on your specific Windows CLI (cmd.exe, Powershell etc.)
+<small> Note: There might be slight syntax differences based on your specific Windows CLI (cmd.exe, Powershell etc.) </small>
 
 
 ## Running the ATM Server Locally
